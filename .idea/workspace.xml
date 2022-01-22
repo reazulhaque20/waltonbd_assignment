@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fefa8521-3b5c-4fe1-9e81-ec623fc1cc87" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/SpringNgBlogApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/controller/AuthController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/controller/BlogPostController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/controller/UserAdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/BaseResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/BlogCommentRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/MessageDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/PostCollectionRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/PostDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/PostUpdateRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/RegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/SubmittedPostResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/UserBlogListResponse$Blog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/UserBlogListResponse$Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/UserBlogListResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/UserRequest$UserInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/dto/UserRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/exception/PostNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/exception/SpringBlogException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/model/BlogComments.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/model/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/repository/BlogCommentsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/repository/PostRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/security/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/security/JwtProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/security/PostService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/AuthService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/AuthenticationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/BlogService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/UserDetailsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/waltonbd/assignment/springngblog/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/waltonbd/assignment/springngblog/SpringNgBlogApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +26,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
