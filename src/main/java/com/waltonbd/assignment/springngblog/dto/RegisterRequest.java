@@ -30,6 +30,11 @@ public class RegisterRequest {
         this.password = password;
     }
 
-    public String getRoles() { return roles; }
-    public void setRoles(String roles) { this.roles = roles; }
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
 }

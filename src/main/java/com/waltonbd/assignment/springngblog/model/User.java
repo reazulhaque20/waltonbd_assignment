@@ -51,11 +51,19 @@ public class User {
         this.email = email;
     }
 
-    public String getRoles() { return roles; }
+    public String getRoles() {
+        return roles;
+    }
 
-    public void setRoles(String roles) { this.roles = roles; }
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
 
-    public String getStatus() { return status; }
+    public String getStatus() {
+        return status;
+    }
 
-    public void setStatus(String status) { this.status = status; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

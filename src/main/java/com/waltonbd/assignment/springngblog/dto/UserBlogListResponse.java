@@ -2,7 +2,7 @@ package com.waltonbd.assignment.springngblog.dto;
 
 import java.util.List;
 
-public class UserBlogListResponse extends BaseResponse{
+public class UserBlogListResponse extends BaseResponse {
 //    public List<Post>
 
     public static class Blog {
@@ -13,7 +13,7 @@ public class UserBlogListResponse extends BaseResponse{
         public List<Comment> comments;
     }
 
-    public static class Comment{
+    public static class Comment {
         public int commentId;
 //        public
     }

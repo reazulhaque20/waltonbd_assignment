@@ -5,7 +5,7 @@ public class UserRequest {
     public String adminAuthToken;
     public UserInfo userInfo;
 
-    public static class UserInfo{
+    public static class UserInfo {
         public String userName;
         public String password;
         public String email;

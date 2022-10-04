@@ -30,7 +30,7 @@ public class PostService {
     }
 
     @Transactional
-    public List<PostDto> showAllActivePostService(){
+    public List<PostDto> showAllActivePostService() {
         List<Post> posts = postRepository.showAllActivePost("Active");
         return posts.stream().map(this::mapFromPostToDto).collect(toList());
     }

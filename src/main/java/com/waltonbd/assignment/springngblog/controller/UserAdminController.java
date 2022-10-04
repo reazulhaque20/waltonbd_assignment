@@ -18,15 +18,15 @@ public class UserAdminController {
     UserService userService;
 
     @PostMapping("/updateUser")
-    public ResponseEntity<BaseResponse> updateUser(@RequestBody UserRequest request){
+    public ResponseEntity<BaseResponse> updateUser(@RequestBody UserRequest request) {
         String responseMessage = null;
-        if(request.adminUser == null || request.adminUser.equals("")){
+        if (request.adminUser == null || request.adminUser.equals("")) {
             responseMessage = "Admin user field can't be empty or null.";
         }
-        if(request.adminAuthToken == null || request.adminAuthToken.equals("")){
+        if (request.adminAuthToken == null || request.adminAuthToken.equals("")) {
             responseMessage = "Auth token can't be empty or null.";
         }
-        if(request.userInfo.userName == null || request.userInfo.userName.equals("")){
+        if (request.userInfo.userName == null || request.userInfo.userName.equals("")) {
             responseMessage = "User name can't be empty or null.";
         }
         return ResponseEntity.ok(responseMessage == null ?
@@ -35,24 +35,24 @@ public class UserAdminController {
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity<BaseResponse> createUser(@RequestBody UserRequest request){
+    public ResponseEntity<BaseResponse> createUser(@RequestBody UserRequest request) {
         String responseMessage = null;
-        if(request.adminUser == null || request.adminUser.equals("")){
+        if (request.adminUser == null || request.adminUser.equals("")) {
             responseMessage = "Admin user field can't be empty or null.";
         }
-        if(request.adminAuthToken == null || request.adminAuthToken.equals("")){
+        if (request.adminAuthToken == null || request.adminAuthToken.equals("")) {
             responseMessage = "Auth token can't be empty or null.";
         }
-        if(request.userInfo.userName == null || request.userInfo.userName.equals("")){
+        if (request.userInfo.userName == null || request.userInfo.userName.equals("")) {
             responseMessage = "User name can't be empty or null.";
         }
-        if(request.userInfo.status == null || request.userInfo.status.equals("")){
+        if (request.userInfo.status == null || request.userInfo.status.equals("")) {
             responseMessage = "User status can't be empty or null.";
         }
-        if(request.userInfo.email == null || request.userInfo.email.equals("")){
+        if (request.userInfo.email == null || request.userInfo.email.equals("")) {
             responseMessage = "User email address can't be empty or null.";
         }
-        if(request.userInfo.password == null || request.userInfo.password.equals("")){
+        if (request.userInfo.password == null || request.userInfo.password.equals("")) {
             responseMessage = "User password can't be empty or null.";
         }
         return ResponseEntity.ok(responseMessage == null ?
@@ -61,7 +61,7 @@ public class UserAdminController {
     }
 
     @PostMapping("/getUserRole")
-    public String getUserRole(@RequestBody String userName){
+    public String getUserRole(@RequestBody String userName) {
         return userService.getUserRoleService(userName);
     }
 }

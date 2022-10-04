@@ -26,17 +26,17 @@ public class BlogPostController {
     @PostMapping("/createblog")
     public ResponseEntity<BaseResponse> createPost(@RequestBody PostDto request) {
         String responseMessage = null;
-        if(request.getUsername() == null || request.getUsername().equals("")){
+        if (request.getUsername() == null || request.getUsername().equals("")) {
             responseMessage = "User name can't be empty or null.";
         }
-        if(request.getAuthToken() == null || request.getAuthToken().equals("")){
+        if (request.getAuthToken() == null || request.getAuthToken().equals("")) {
             responseMessage = "Auth token can't be empty or null.";
         }
-        if(request.getTitle() == null || request.getTitle().equals("")){
+        if (request.getTitle() == null || request.getTitle().equals("")) {
             responseMessage = "Blog title can't be empty or null.";
         }
-        if(request.getContent() == null || request.getContent().equals("")){
-            responseMessage  = "Blog content can't be empty or null.";
+        if (request.getContent() == null || request.getContent().equals("")) {
+            responseMessage = "Blog content can't be empty or null.";
         }
         return ResponseEntity.ok(responseMessage == null ?
                 new BaseResponse(200, blogService.createNewPost(request)) :
@@ -44,25 +44,25 @@ public class BlogPostController {
     }
 
     @PostMapping("/getUserPost")
-    public List<Post> getAllPost(@RequestBody PostCollectionRequest request){
+    public List<Post> getAllPost(@RequestBody PostCollectionRequest request) {
         //Own list both approved and submitted
         //Other approved post
-        if(request.userName == null || request.userName.equals("")){
+        if (request.userName == null || request.userName.equals("")) {
             // TODO, what will be the return;
         }
-        if(request.authToken == null || request.authToken.equals("")){
+        if (request.authToken == null || request.authToken.equals("")) {
             // TODO, what will be the return;
         }
         return blogService.getAllPost(request);
     }
 
     @PostMapping("/getSubmitted")
-    public ResponseEntity<SubmittedPostResponse> getAllSubmittedPost(@RequestBody UserRequest request){
+    public ResponseEntity<SubmittedPostResponse> getAllSubmittedPost(@RequestBody UserRequest request) {
         String responseMessage = null;
-        if(request.adminUser == null || request.adminUser.equals("")){
+        if (request.adminUser == null || request.adminUser.equals("")) {
             responseMessage = "Admin user field can't be empty or null.";
         }
-        if(request.adminAuthToken == null || request.adminAuthToken.equals("")){
+        if (request.adminAuthToken == null || request.adminAuthToken.equals("")) {
             responseMessage = "Auth token can't be empty or null.";
         }
         return ResponseEntity.ok(responseMessage == null ?
@@ -71,11 +71,11 @@ public class BlogPostController {
     }
 
     @PostMapping("/updatePostStatus")
-    public String updatePostStatus(@RequestBody PostUpdateRequest request){
-        if(request.adminUser == null || request.adminUser.equals("")){
+    public String updatePostStatus(@RequestBody PostUpdateRequest request) {
+        if (request.adminUser == null || request.adminUser.equals("")) {
             return "Admin user field can't be empty or null.";
         }
-        if(request.adminAuthToken == null || request.adminAuthToken.equals("")){
+        if (request.adminAuthToken == null || request.adminAuthToken.equals("")) {
             return "Auth token can't be empty or null.";
         }
         blogService.updatePostStatus(request);
@@ -83,13 +83,13 @@ public class BlogPostController {
     }
 
     @PostMapping("/updatePostContent")
-    public String updatePostContent(@RequestBody PostUpdateRequest request){
+    public String updatePostContent(@RequestBody PostUpdateRequest request) {
         //Admin or creator
         return null;
     }
 
     @PostMapping("/addComment")
-    public String addComments(@RequestBody BlogCommentRequest request){
+    public String addComments(@RequestBody BlogCommentRequest request) {
         try {
             blogService.saveComment(request);
             return "Successfully save comment.";

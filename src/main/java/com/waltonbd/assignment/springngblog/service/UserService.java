@@ -19,19 +19,19 @@ public class UserService {
     @Autowired
     JwtProvider jwtProvider;
 
-    public boolean validateAdmin(String userName){
+    public boolean validateAdmin(String userName) {
         return "admin".equalsIgnoreCase(userRepo.findByUserName(userName).get().getRoles());
     }
 
-    public String getUserRoleService(String userName){
+    public String getUserRoleService(String userName) {
         User user = userRepo.findByUserName(userName).get();
         return user.getRoles();
     }
 
     public String updateUser(UserRequest request) {
         String response;
-        if(jwtProvider.validateToken(request.adminAuthToken)){
-            if(validateAdmin(request.adminUser)){
+        if (jwtProvider.validateToken(request.adminAuthToken)) {
+            if (validateAdmin(request.adminUser)) {
                 try {
                     updateUserStatus(request.userInfo.userName, request.userInfo.status, request.userInfo.roles);
                     response = "Successfully update user status.";
@@ -47,19 +47,19 @@ public class UserService {
         return response;
     }
 
-    private void updateUserStatus(String userName, String status, String roles) throws Exception{
+    private void updateUserStatus(String userName, String status, String roles) throws Exception {
         User user = userRepo.findByUserName(userName).get();
-        if(!status.isEmpty())
+        if (!status.isEmpty())
             user.setStatus(status);
-        if(!roles.isEmpty())
+        if (!roles.isEmpty())
             user.setRoles(roles);
         userRepo.save(user);
     }
 
-    public String createUser(UserRequest request){
+    public String createUser(UserRequest request) {
         String response;
-        if(jwtProvider.validateToken(request.adminAuthToken)){
-            if(validateAdmin(request.adminUser)){
+        if (jwtProvider.validateToken(request.adminAuthToken)) {
+            if (validateAdmin(request.adminUser)) {
                 try {
                     createUser(request.userInfo.userName, request.userInfo.email, request.userInfo.password);
                     response = "Successfully create user.";
@@ -75,7 +75,7 @@ public class UserService {
         return response;
     }
 
-    private void createUser(String userName, String email, String password) throws Exception{
+    private void createUser(String userName, String email, String password) throws Exception {
         User user = new User();
         user.setUserName(userName);
         user.setEmail(email);

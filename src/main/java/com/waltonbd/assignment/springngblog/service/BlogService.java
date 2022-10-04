@@ -41,11 +41,11 @@ public class BlogService {
     BlogCommentsRepository blogCommentsRepo;
 
 
-    public String createNewPost(PostDto request){
+    public String createNewPost(PostDto request) {
         String response;
-        if(jwtProvider.validateToken(request.getAuthToken())){
+        if (jwtProvider.validateToken(request.getAuthToken())) {
             User user = userRepo.findByUserName(request.getUsername()).get();
-            if(user != null && "active".equals(user.getStatus())){
+            if (user != null && "active".equals(user.getStatus())) {
                 postService.createPost(request);
                 response = "Successfully create new post.";
             } else {
@@ -59,7 +59,7 @@ public class BlogService {
 
     public List<Post> getAllPost(PostCollectionRequest request) {
         List<Post> postList = new ArrayList<>();
-        if(jwtProvider.validateToken(request.authToken)){
+        if (jwtProvider.validateToken(request.authToken)) {
             postList = postRepo.showAllActivePost("Active").stream().collect(Collectors.toList());
             postList.addAll(postRepo.showAllOwnPost(request.userName, "submit"));
             postList.stream().sorted((post1, post2) -> post1.getUpdatedOn().compareTo(post2.getUpdatedOn())).collect(Collectors.toList());
@@ -73,66 +73,67 @@ public class BlogService {
 //        return "admin".equalsIgnoreCase(userRepo.findByUserName(userName).get().getRoles());
 //    }
 
-    public List<Post> getAllSubmittedPost(String status){
+    public List<Post> getAllSubmittedPost(String status) {
         return postRepo.showAllActivePost(status);
     }
-    public String updatePostStatus(PostUpdateRequest request){
+
+    public String updatePostStatus(PostUpdateRequest request) {
         String response;
 
-        if(jwtProvider.validateToken(request.adminAuthToken)){
-            if(userService.validateAdmin(request.adminUser)){
-                try{
+        if (jwtProvider.validateToken(request.adminAuthToken)) {
+            if (userService.validateAdmin(request.adminUser)) {
+                try {
                     updatePost(request.postId);
                     response = "Successfully update post.";
-                }catch(Throwable throwable){
+                } catch (Throwable throwable) {
                     response = "Failed to update post!";
                 }
-            }else{
+            } else {
                 response = "Not a Admin Request!";
             }
-        }else{
+        } else {
             response = "Auth Token mismatch!";
         }
 
         return response;
     }
 
-    public String deletePost(PostUpdateRequest request){
+    public String deletePost(PostUpdateRequest request) {
         String response;
 
-        if(jwtProvider.validateToken(request.adminAuthToken)){
-            if(userService.validateAdmin(request.adminUser) || validateOwner(request.userInfo.userName, request.postId)){
-                try{
+        if (jwtProvider.validateToken(request.adminAuthToken)) {
+            if (userService.validateAdmin(request.adminUser) || validateOwner(request.userInfo.userName, request.postId)) {
+                try {
                     deletePost(request.postId);
                     response = "Successfully delete post.";
-                }catch(Throwable throwable){
+                } catch (Throwable throwable) {
                     response = "Failed to delete post!";
                 }
-            }else{
+            } else {
                 response = "Not a Admin Request!";
             }
-        }else{
+        } else {
             response = "Auth Token mismatch!";
         }
 
         return response;
     }
 
-    private void updatePost(Long postId){
+    private void updatePost(Long postId) {
         Post post = postRepo.findById(postId).get();
         post.setStatus("approved");
         postRepo.save(post);
     }
 
-    private void deletePost(Long postId){
+    private void deletePost(Long postId) {
         postRepo.deleteById(postId);
     }
 
-    private boolean validateOwner(String userName, Long postId){
+    private boolean validateOwner(String userName, Long postId) {
         return userName.equalsIgnoreCase(postRepo.findById(postId).get().getUsername());
     }
 
-    public void saveComment(BlogCommentRequest request){
+    public void saveComment(BlogCommentRequest request) {
         BlogComments blogComments = new BlogComments();
         blogComments.setPost_id((long) request.post_id);
         blogComments.setUser_id((long) request.user_id);
